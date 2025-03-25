@@ -20,6 +20,7 @@ export default function (server: Server, ctx: AppContext) {
   server.app.bsky.feed.getLikes({
     auth: ctx.authVerifier.standardOptional,
     handler: async ({ params, auth, req }) => {
+      log.info("JORGEDY GET LIKES");
       const { viewer, includeTakedowns } = ctx.authVerifier.parseCreds(auth)
       const labelers = ctx.reqLabelers(req)
       const hydrateCtx = await ctx.hydrator.createContext({

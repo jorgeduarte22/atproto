@@ -30,6 +30,7 @@ export default function (server: Server, ctx: AppContext) {
   server.app.bsky.feed.getPostThread({
     auth: ctx.authVerifier.accessStandard(),
     handler: async (reqCtx) => {
+      log.info("JORGEDY getPostThread")
       try {
         return await pipethroughReadAfterWrite(ctx, reqCtx, getPostThreadMunge)
       } catch (err) {

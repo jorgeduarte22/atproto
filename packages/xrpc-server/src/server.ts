@@ -111,6 +111,7 @@ export class Server {
   // =
 
   method(nsid: string, configOrFn: XRPCHandlerConfig | XRPCHandler) {
+    log.info("JORGEDY SERVER METHOD")
     this.addMethod(nsid, configOrFn)
   }
 
